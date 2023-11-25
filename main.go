@@ -67,5 +67,9 @@ func parseContent(input []byte) []byte {
 }
 
 func saveHTML(outFname string, data []byte) error {
+	// Write the bytes to the file
+	// Note: the third parameter represents file permissions.
+	// We're using 0644 for creating a file that's both readable and writable
+	// by the owner but only readable by anyone else
 	return os.WriteFile(outFname, data, 0644)
 }
