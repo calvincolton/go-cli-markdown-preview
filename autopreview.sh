@@ -1,10 +1,10 @@
 #! /bin/bash
 
-FHASH=`md5sum $1`
+FHASH=`md5 $1`
 while true; do
-    NHASH=`md5sum $1`
+    NHASH=`md5 $1`
     if [ "$NHASH" != "$FHASH" ]; then
-        ./mdp -file $1
+        ./go-cli-markdown-preview -file $1
         FHASH=$NHASH
     fi
     sleep 5
